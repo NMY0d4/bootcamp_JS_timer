@@ -79,4 +79,11 @@ const myPassword = {
     },
 };
 
-console.log(myPassword.threeArrayForPass());
+// console.log(myPassword.threeArrayForPass());
+
+//////////////// TRAINING Day
+
+const inputs = document.querySelectorAll("input");
+inputs.forEach((input, i) =>
+    console.log(`i y a ${i + 1} inputs dans ce document.`)
+);
