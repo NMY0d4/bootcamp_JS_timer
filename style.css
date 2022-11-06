@@ -50,3 +50,23 @@ body {
     align-items: center;
     flex-direction: column;
 }
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todoslist {
+    flex-direction: column;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.done {
+    color: purple;
+    font-weight: bold;
+}

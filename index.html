@@ -29,7 +29,7 @@
     </style>
     <body>
         <section id="timer">
-            <div class="timer">
+            <div class="timer center">
                 <div class="controls">
                     <input id="duration" value="3" />
                     <div>
@@ -53,6 +53,7 @@
         <!-- // training -->
 
         <section id="training">
+            <hr />
             <form>
                 <input type="text" placeholder="Bear Name" />
                 <input type="password" placeholder="password" />
@@ -60,6 +61,15 @@
                 <input type="range" min="100" max="500" />
                 <input type="submit" value="Valider" />
             </form>
+            <hr />
+            <div class="center todoslist">
+                <h2>My todos list</h2>
+                <ul id="todos">
+                    <li class="todo">Mow the lawn <button>X</button></li>
+                    <li class="todo">Milk the cows <button>X</button></li>
+                    <li class="todo">Feed the alpacas <button>X</button></li>
+                </ul>
+            </div>
         </section>
 
         <script src="timer.js"></script>
