@@ -3,13 +3,18 @@
     width: 400px;
 }
 
+#grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.grid-row {
+    width: 100%;
+}
+
 .timer {
     position: relative;
     display: inline-block;
-}
-
-* {
-    font: inherit;
 }
 
 body {
@@ -69,4 +74,19 @@ h2 {
 .done {
     color: purple;
     font-weight: bold;
+}
+
+section {
+    margin: 0 auto;
+    width: 80%;
+    background-color: antiquewhite;
+}
+.timer {
+    display: flex;
+    justify-content: center;
+}
+form {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
 }

@@ -6,73 +6,86 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>My timer</title>
         <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="passwordGenerator.css" />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
         />
     </head>
-    <style>
-        section {
-            margin: 0 auto;
-            width: 30%;
-            background-color: antiquewhite;
-        }
-        .timer {
-            display: flex;
-            justify-content: center;
-        }
-        form {
-            padding: 3rem;
-            display: flex;
-            flex-direction: column;
-        }
-    </style>
+
     <body>
-        <section id="timer">
-            <div class="timer center">
-                <div class="controls">
-                    <input id="duration" value="3" />
-                    <div>
-                        <button id="start"><i class="fas fa-play"></i></button>
-                        <button id="pause"><i class="fas fa-pause"></i></button>
+        <div id="grid-container">
+            <div class="grid-row grid-row--1">
+                <section id="timer">
+                    <div class="timer center">
+                        <div class="controls">
+                            <input id="duration" value="3" />
+                            <div>
+                                <button id="start">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <button id="pause">
+                                    <i class="fas fa-pause"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <svg class="dial">
+                            <circle
+                                fill="transparent"
+                                stroke="green"
+                                stroke-width="15"
+                                r="190"
+                                cx="0"
+                                cy="200"
+                                transform="rotate(-90 100 100)"
+                            />
+                        </svg>
                     </div>
-                </div>
-                <svg class="dial">
-                    <circle
-                        fill="transparent"
-                        stroke="green"
-                        stroke-width="15"
-                        r="190"
-                        cx="0"
-                        cy="200"
-                        transform="rotate(-90 100 100)"
-                    />
-                </svg>
-            </div>
-        </section>
-        <!-- // training -->
+                </section>
 
-        <section id="training">
-            <hr />
-            <form>
-                <input type="text" placeholder="Bear Name" />
-                <input type="password" placeholder="password" />
-                <input type="checkbox" />
-                <input type="range" min="100" max="500" />
-                <input type="submit" value="Valider" />
-            </form>
-            <hr />
-            <div class="center todoslist">
-                <h2>My todos list</h2>
-                <ul id="todos">
-                    <li class="todo">Mow the lawn <button>X</button></li>
-                    <li class="todo">Milk the cows <button>X</button></li>
-                    <li class="todo">Feed the alpacas <button>X</button></li>
-                </ul>
+                <!-- // training -->
+                <section id="training">
+                    <hr />
+                    <form>
+                        <input type="text" placeholder="Bear Name" />
+                        <input type="password" placeholder="password" />
+                        <input type="checkbox" />
+                        <input type="range" min="100" max="500" />
+                        <input type="submit" value="Valider" />
+                    </form>
+                    <hr />
+                    <div class="center todoslist">
+                        <h2>My todos list</h2>
+                        <ul id="todos">
+                            <li class="todo">
+                                Mow the lawn <button>X</button>
+                            </li>
+                            <li class="todo">
+                                Milk the cows <button>X</button>
+                            </li>
+                            <li class="todo">
+                                Feed the alpacas <button>X</button>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
             </div>
-        </section>
 
+            <!-- Build a password generator alone without tuto for trainning -->
+            <div class="grid-row grid-row--2">
+                <aside id="password_gen">
+                    <h1>Générer votre mot de passe</h1>
+                    <form>
+                        <label for="long_mdp"
+                            >Longueur du mot de passe?(8 minimum)</label
+                        >
+                        <input type="number" id="long_mdp" value="8" />
+                    </form>
+                </aside>
+            </div>
+        </div>
         <script src="timer.js"></script>
+        <script src="passwordGenerator.js"></script>
         <script src="index.js"></script>
     </body>
 </html>

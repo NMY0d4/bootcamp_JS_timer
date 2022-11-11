@@ -66,23 +66,6 @@ const myDeck = {
     },
 };
 
-const myPassword = {
-    letter: "abcdefghijklmnopqrstuvwxyz",
-    symbolAndSign: "&é'(-è_çà)=#{[|`^@]},;:!?./§",
-    numbers: "0123456789",
-
-    _threeArrayForPass() {
-        const { letter, symbolAndSign, numbers } = this;
-        const arrLower = letter.split("");
-        const arrUpper = letter.toUpperCase().split("");
-        const arrLettersUpAndLow = [...arrLower, ...arrUpper];
-        const arrNumbers = numbers.split("");
-        const arrSymbAndSign = symbolAndSign.split("");
-
-        return { arrLettersUpAndLow, arrNumbers, arrSymbAndSign };
-    },
-};
-
 // console.log(myPassword.threeArrayForPass());
 
 /////////////////////////////////////////////////////////////////////////
