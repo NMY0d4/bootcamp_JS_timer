@@ -32,6 +32,7 @@ const myPassword = {
             );
         const { arrLettersUpAndLow, arrNumbers, arrSymbAndSign } =
             this._threeArrayForPass();
+        this.password = [];
         const addInPassword = (array) =>
             this.password.push(
                 array[Math.floor(Math.random() * array.length) + 1 - 1]
@@ -51,4 +52,12 @@ const myPassword = {
     },
 };
 
-console.log(myPassword.passwordGenerator(12));
+const formMdpGen = document.querySelector("#form_mdp_gen");
+
+formMdpGen.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const longMdp = document.querySelector("#long_mdp").value;
+
+    myPassword.passwordGenerator(longMdp);
+    console.log(myPassword.passwordGenerator(longMdp));
+});
