@@ -71,7 +71,7 @@ const myPassword = {
     symbolAndSign: "&é'(-è_çà)=#{[|`^@]},;:!?./§",
     numbers: "0123456789",
 
-    threeArrayForPass() {
+    _threeArrayForPass() {
         const { letter, symbolAndSign, numbers } = this;
         const arrLower = letter.split("");
         const arrUpper = letter.toUpperCase().split("");
