@@ -8,6 +8,18 @@
     grid-template-columns: 2fr 1fr;
 }
 
+#long_mdp {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+}
+
+.displayPwd {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: red;
+}
+
 .grid-row {
     width: 100%;
 }
