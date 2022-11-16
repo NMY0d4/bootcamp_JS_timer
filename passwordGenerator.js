@@ -60,7 +60,7 @@ formMdpGen.addEventListener("submit", (e) => {
     const longMdp = document.querySelector("#long_mdp").value;
 
     myPassword.passwordGenerator(longMdp);
-    displayPassword.innerHTML = `Votre mot de passe: <span class="displayPwd">${myPassword.passwordGenerator(
+    displayPassword.innerHTML = `Votre mot de passe:<br/><span class="displayPwd">${myPassword.passwordGenerator(
         longMdp
     )}</span>`;
     formMdpGen.append(displayPassword);
