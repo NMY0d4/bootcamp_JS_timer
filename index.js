@@ -76,6 +76,17 @@ const myDeck = {
 //     console.log(`i y a ${i + 1} inputs dans ce document.`)
 // );
 
-const todo = document.querySelector("#todos .todo");
+const input = document.querySelector("#username");
 
-todo.classList.add("done");
+input.addEventListener("keydown", (e) => {
+    console.log("KEY DOWN");
+});
+
+input.addEventListener("keyup", (e) => {
+    e.preventDefault();
+    console.log("KEY UP");
+});
+
+input.addEventListener("keypress", (e) => {
+    console.log("KEY PRESS");
+});
