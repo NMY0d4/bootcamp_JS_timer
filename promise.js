@@ -16,3 +16,20 @@ const myPromise = (NombresDeFaces, duration) => {
 myPromise(10, 5)
     .then((res) => (diceResult.innerHTML = res))
     .catch((rej) => (diceResult.innerHTML = rej));
+
+////////////////////////////////////////////////////
+//        REQUEST
+/////////////////////////////////////
+
+const prom = fetch("https://swapi.py4e.com/api/planets/")
+    .then((res) => {
+        if (!res.ok) throw new Error(`Status Code Error: ${res.status}`);
+        return res.json();
+    })
+    .then((data) => {
+        const filmURL = data.results[0].films[1];
+        return fetch(filmURL);
+    })
+    .then((filmData) => filmData.json())
+    .then((filmDataJson) => console.log(filmDataJson.title))
+    .catch((err) => console.error(err));
