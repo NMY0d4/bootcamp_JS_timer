@@ -21,15 +21,30 @@ myPromise(10, 5)
 //        REQUEST
 /////////////////////////////////////
 
-const prom = fetch("https://swapi.py4e.com/api/planets/")
-    .then((res) => {
-        if (!res.ok) throw new Error(`Status Code Error: ${res.status}`);
-        return res.json();
-    })
-    .then((data) => {
-        const filmURL = data.results[0].films[1];
-        return fetch(filmURL);
-    })
-    .then((filmData) => filmData.json())
-    .then((filmDataJson) => console.log(filmDataJson.title))
+const checkStatusAndParse = (res) => {
+    if (!res.ok) throw new Error(`Status Code Error: ${res.status}`);
+    return res.json();
+};
+
+const printPlantets = (data) => {
+    console.log("Loaded 10 more planets...");
+    data.results.forEach((el) => {
+        console.log(el.name);
+    });
+    return Promise.resolve(data.next);
+};
+
+const fetchNextPlanets = (url = "https://swapi.py4e.com/api/planets/") => {
+    return fetch(url);
+};
+
+fetchNextPlanets()
+    .then(checkStatusAndParse)
+    .then(printPlantets)
+    .then(fetchNextPlanets)
+    .then(checkStatusAndParse)
+    .then(printPlantets)
+    .then(fetchNextPlanets)
+    .then(checkStatusAndParse)
+    .then(printPlantets)
     .catch((err) => console.error(err));
