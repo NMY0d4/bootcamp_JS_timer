@@ -21,33 +21,33 @@ myPromise(10, 5)
 //        REQUEST
 /////////////////////////////////////
 
-const checkStatusAndParse = (res) => {
-    if (!res.ok) throw new Error(`Status Code Error: ${res.status}`);
-    return res.json();
-};
+// const checkStatusAndParse = (res) => {
+//     if (!res.ok) throw new Error(`Status Code Error: ${res.status}`);
+//     return res.json();
+// };
 
-const printPlantets = (data) => {
-    console.log("Loaded 10 more planets...");
-    data.results.forEach((el) => {
-        console.log(el.name);
-    });
-    return Promise.resolve(data.next);
-};
+// const printPlantets = (data) => {
+//     console.log("Loaded 10 more planets...");
+//     data.results.forEach((el) => {
+//         console.log(el.name);
+//     });
+//     return Promise.resolve(data.next);
+// };
 
-const fetchNextPlanets = (url = "https://swapi.py4e.com/api/planets/") => {
-    return fetch(url);
-};
+// const fetchNextPlanets = (url = "https://swapi.py4e.com/api/planets/") => {
+//     return fetch(url);
+// };
 
-fetchNextPlanets()
-    .then(checkStatusAndParse)
-    .then(printPlantets)
-    .then(fetchNextPlanets)
-    .then(checkStatusAndParse)
-    .then(printPlantets)
-    .then(fetchNextPlanets)
-    .then(checkStatusAndParse)
-    .then(printPlantets)
-    .catch((err) => console.error(err));
+// fetchNextPlanets()
+//     .then(checkStatusAndParse)
+//     .then(printPlantets)
+//     .then(fetchNextPlanets)
+//     .then(checkStatusAndParse)
+//     .then(printPlantets)
+//     .then(fetchNextPlanets)
+//     .then(checkStatusAndParse)
+//     .then(printPlantets)
+//     .catch((err) => console.error(err));
 
 async function greet() {
     return "HELLO";
@@ -55,3 +55,19 @@ async function greet() {
 greet().then((val) => {
     console.log("PROMISE RESOLVED WITH:", val);
 });
+
+async function add(x, y) {
+    if (typeof x !== "number" || typeof y !== "number") {
+        throw "X and Y must be numbers!";
+    }
+    return x + y;
+}
+
+console.log(add(5, 0.3));
+
+async function getPlanets() {
+    const planets = await axios.get("https://swapi.py4e.com/api/planets/");
+    console.log(planets);
+}
+
+getPlanets();
