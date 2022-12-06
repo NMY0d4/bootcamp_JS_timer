@@ -48,3 +48,10 @@ fetchNextPlanets()
     .then(checkStatusAndParse)
     .then(printPlantets)
     .catch((err) => console.error(err));
+
+async function greet() {
+    return "HELLO";
+}
+greet().then((val) => {
+    console.log("PROMISE RESOLVED WITH:", val);
+});
