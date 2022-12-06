@@ -66,8 +66,12 @@ async function add(x, y) {
 console.log(add(5, 0.3));
 
 async function getPlanets() {
-    const planets = await axios.get("https://swapi.py4e.com/api/planets/");
-    console.log(planets);
+    try {
+        const planets = await axios.get("https://swapi.py4e.com/api/planets/");
+        console.log(planets);
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 getPlanets();
