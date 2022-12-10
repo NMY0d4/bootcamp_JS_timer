@@ -99,6 +99,7 @@
 // console.log(mycolor1.hex());
 // console.log(mycolor1.rgba(0.5));
 
+///////////////////////////////////////////
 class Color {
     constructor(r, g, b, name) {
         this.r = r;
@@ -183,3 +184,37 @@ console.log(red.hsl());
 red.opposite();
 red.rgba(0.3);
 const white = new Color(255, 255, 255, "white");
+
+///////////////////////////////////////////////////////////
+
+class Pet {
+    constructor(name, age) {
+        console.log("IN PET");
+
+        this.name = name;
+        this.age = age;
+    }
+
+    eat() {
+        return `${this.name} is eating!`;
+    }
+}
+
+class Cat extends Pet {
+    constructor(name, age, livesLeft = 9) {
+        console.log("IN CAT");
+        super(name, age);
+        this.livesLeft = livesLeft;
+    }
+    meow() {
+        return "MEOW";
+    }
+}
+
+class Dog extends Pet {
+    bark() {
+        return "WOOOFFF!!!";
+    }
+}
+
+const loustic = new Cat("Loustic", 3);
