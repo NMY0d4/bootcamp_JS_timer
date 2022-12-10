@@ -49,29 +49,56 @@ myPromise(10, 5)
 //     .then(printPlantets)
 //     .catch((err) => console.error(err));
 
-async function greet() {
-    return "HELLO";
-}
-greet().then((val) => {
-    console.log("PROMISE RESOLVED WITH:", val);
-});
+// async function greet() {
+//     return "HELLO";
+// }
+// greet().then((val) => {
+//     console.log("PROMISE RESOLVED WITH:", val);
+// });
 
-async function add(x, y) {
-    if (typeof x !== "number" || typeof y !== "number") {
-        throw "X and Y must be numbers!";
-    }
-    return x + y;
-}
+// async function add(x, y) {
+//     if (typeof x !== "number" || typeof y !== "number") {
+//         throw "X and Y must be numbers!";
+//     }
+//     return x + y;
+// }
 
-console.log(add(5, 0.3));
+// console.log(add(5, 0.3));
 
-async function getPlanets() {
-    try {
-        const planets = await axios.get("https://swapi.py4e.com/api/planets/");
-        console.log(planets);
-    } catch (error) {
-        console.error(error);
-    }
-}
+// async function getPlanets() {
+//     try {
+//         const planets = await axios.get("https://swapi.py4e.com/api/planets/");
+//         console.log(planets);
+//     } catch (error) {
+//         console.error(error);
+//     }
+// }
 
-getPlanets();
+// getPlanets();
+
+// async function get3Pokemon() {
+//     const poke1 = axios.get("https://pokeapi.co/api/v2/pokemon/1");
+//     const poke2 = axios.get("https://pokeapi.co/api/v2/pokemon/2");
+//     const poke3 = axios.get("https://pokeapi.co/api/v2/pokemon/3");
+//     const pokemons = await Promise.all([poke1, poke2, poke3]);
+//     pokemons.forEach((pok) => console.log(pok.data.name));
+// }
+
+// get3Pokemon();
+
+changBodyColor = (color, delay) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            document.body.style.backgroundColor = color;
+            resolve();
+        }, delay * 1000);
+    });
+};
+
+lightShow = async () => {
+    await changBodyColor("teal", 1);
+    await changBodyColor("pink", 1);
+    await changBodyColor("indigo", 1);
+    await changBodyColor("violet", 1);
+};
+// lightShow();
