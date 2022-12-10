@@ -35,3 +35,32 @@ const firstColor = makeColor(122, 52, 176);
 
 firstColorRgb = firstColor.rgb();
 console.log(firstColorRgb);
+
+const black = makeColor(0, 0, 0);
+
+function Color(r, g, b) {
+    this.r = r;
+    this.g = g;
+    this.b = b;
+}
+
+Color.prototype.rgb = function () {
+    const { r, g, b } = this;
+    return `rgb(${r},${g}, ${b})`;
+};
+
+Color.prototype.hex = function () {
+    const { r, g, b } = this;
+    return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+};
+
+Color.prototype.rgba = function (a = 1) {
+    return `${this.rgb().replace("(", "a(").slice(0, -1)},${a})`;
+};
+
+const myColor1 = new Color(25, 10, 16);
+const myColor2 = new Color(156, 52, 254);
+
+console.log(myColor1.rgb());
+console.log(myColor2.rgb());
+console.log(myColor2.rgba(0.2));
